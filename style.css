@@ -1,0 +1,35 @@
+header {
+    text-align: center;
+    background-color: #282828;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#headerTitle {
+    color: white;
+}
+
+.container {
+    margin-top: 10px;
+    /* background-color: #d3d3d3; */
+    width: auto;
+    display: flex;
+    
+
+}
+
+/* search bar image */
+img {
+    height: 20px;
+    width: 20px;
+}
+
+button {
+    border-radius: 20px;
+    background-color: #d3d3d3;
+}
+
+input {
+    border-radius: 10px;
+
+}
