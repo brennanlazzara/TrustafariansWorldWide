@@ -1,0 +1,26 @@
+Project Title
+Trustafarians Worldwide
+
+Project Description
+This app is designed to help those armed with money and time to be able to search
+for festivals/ events they want to go to around the world and create an event planner that 
+saves their desired travel path to local storage
+
+User Story
+1) As a trust fund baby, 
+2) I want to see what music festivals and live shows internationally I would want to go to
+3) So that I can party with the homies
+
+Wireframe or sketch of design
+
+APIs to be used
+https://www.songkick.com/developer
+https://rapidapi.com/skyscanner/api/skyscanner-flight-search
+
+Rough Breakdown of Tasks
+
+
+Acceptance Criteria
+GIVEN that I have the necessary money and am signed up for the app
+WHEN I search for festivals/ events by date
+THEN I can organize/ plan the trip
