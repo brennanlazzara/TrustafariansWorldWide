@@ -1,12 +1,25 @@
+body {
+    background-image: url("assets/images/cheesy-tropic.jpg");
+}
+
 header {
     text-align: center;
     background-color: #282828;
     padding-top: 5px;
     padding-bottom: 5px;
+    background-color: transparent;
 }
 
 #headerTitle {
-    color: white;
+    color:green
+    -webkit-text-stroke: 1p white;
+    color: green;
+    text-shadow:
+        3px 3px 0 black,
+        2px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        5px 5px 0 black;;
 }
 
 .container {
@@ -14,7 +27,8 @@ header {
     /* background-color: #d3d3d3; */
     width: auto;
     display: flex;
-    
+    margin-left: 45%;
+    margin-bottom: 10px;
 
 }
 
@@ -40,10 +54,12 @@ ul {list-style-type: none;}
 body {font-family: Verdana, sans-serif;}
 
 .month {
-  padding: 70px 25px;
-  width: 100%;
+  padding: 10px 15px;
+  width: 50%;
   background: #1abc9c;
   text-align: center;
+  margin-top: 10px;
+  margin: auto;
 }
 
 .month ul {
@@ -72,6 +88,8 @@ body {font-family: Verdana, sans-serif;}
   margin: 0;
   padding: 10px 0;
   background-color: #ddd;
+  width: 50%;
+  margin: auto;
 }
 
 .weekdays li {
@@ -85,6 +103,8 @@ body {font-family: Verdana, sans-serif;}
   padding: 10px 0;
   background: #eee;
   margin: 0;
+  width: 50%;
+  margin: auto;
 }
 
 .days li {
