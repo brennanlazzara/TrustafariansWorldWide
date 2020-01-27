@@ -27,8 +27,8 @@ header {
     /* background-color: #d3d3d3; */
     width: auto;
     display: flex;
-    margin-left: 45%;
-    margin-bottom: 10px;
+    margin-left: 40%;
+    margin-bottom: 100px;
 
 }
 
@@ -45,6 +45,7 @@ button {
 
 input {
     border-radius: 10px;
+    width: 30%;
 
 }
 
