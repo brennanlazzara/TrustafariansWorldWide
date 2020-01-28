@@ -8,6 +8,7 @@
     <title>Project 1</title>
     <link rel=“stylesheet”
         href=“https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css”>
+        <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
@@ -16,71 +17,29 @@
     <header>
         <h1 id="headerTitle">Trustafarian World Wide</h1>
     </header>
-<div class="row">
-    <div class="container">
-        <input type="text" name="city" id="city" placeholder="Search by City Name:">
-        <div id="searchDiv">
-        <button id="search_btn">
-            <img src="assets/images/icons8-search-64 copy.png" alt="searchIcon">
-        </button>
-</div>
-</div>
 
-<div class="month">      
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li id="currentDay">
-      <br>
-      <span style="font-size:18px"></span>
-    </li>
-  </ul>
+
+<!-- Departure Destination Search By -->
+
+<!-- Arrival Destination Search By -->
+
+<div id="calendar">
+    <h3 id="">Departure Destination</h3>
+<input id="dDest" placeholder="Search by City">
+    <h3 id="">Arrival Destination</h3>
+<input id="aDest" placeholder="Search by City">
+<h3 id="">Departure</h3>
+<input id="dDate" type="date">
+<h3>Arrival</h3>
+<input id="aDate" type="date">
+<br>
+<button type="submit">Search</button>
 </div>
 
-<ul class="weekdays">
-  <li>Mo</li>
-  <li>Tu</li>
-  <li>We</li>
-  <li>Th</li>
-  <li>Fr</li>
-  <li>Sa</li>
-  <li>Su</li>
-</ul>
 
-<ul class="days">  
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li>11</li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
-</ul>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+
         <script src="script.js"></script>
 
 </body>
