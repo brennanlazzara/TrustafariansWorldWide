@@ -11,7 +11,7 @@ header {
 }
 
 #headerTitle {
-    color:green
+    color:green;
     -webkit-text-stroke: 1p white;
     color: green;
     text-shadow:
