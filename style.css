@@ -1,5 +1,7 @@
 body {
     background-image: url("assets/images/cheesy-tropic.jpg");
+    height: 1000px;
+
 }
 
 header {
@@ -57,4 +59,9 @@ input {
     text-align: center;
     font-family: sans-serif;
     font-size: larger;
+}
+
+#results-display {
+height: 200px;
+background-color: yellow;
 }
