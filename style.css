@@ -33,20 +33,33 @@ img {
 
 button {
     border-radius: 20px;
-    background-color: #d3d3d3;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 input {
     border-radius: 10px;
-    width: 30%;
+    width: 50%;
     text-align: center;
+}
+
+#inputForm {
+    max-width: 700px;
+    margin-left: 20%;
+    background-color: #d3d3d3;
+    border-radius: 25px;
 }
 
 #calendar {
     text-align: center;
     font-family: sans-serif;
     font-size: 18px;
+
 }
+
+
 
 #aDate {
     text-align: center;
@@ -62,6 +75,12 @@ input {
 }
 
 #results-display {
-height: 200px;
-background-color: yellow;
+    height: 200px;
+    background-color: yellow;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
 }
