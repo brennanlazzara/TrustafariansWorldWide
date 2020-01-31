@@ -27,6 +27,12 @@ var flights = {
 	}
 }
 $.ajax(flights).done(function (response) {
+var DIV = $('<div>');
+  DIV.append(`<h3>MinPrice: ${JSON.stringify(response.Quotes[0].MinPrice)}</h3><h3>Direct: ${JSON.stringify(response.Quotes[0].Direct)}</h3><h3>CarrierIds: ${response.Quotes[0].OutboundLeg.CarrierIds}</h3><h3>Places ${JSON.stringify(response.Places[0].Name)}</h3><h3>Carriers ${JSON.stringify(response.Carriers[0].Name)}</h3>`);
+  $('#resultsDisplay').append(DIV);
+    
+
+    
     console.log(response.Quotes);
     console.log(response.Places);
     console.log(response.Carriers);
@@ -36,7 +42,7 @@ $.ajax(flights).done(function (response) {
    });
 
    // Lyft API
-   
+
 
 });
 

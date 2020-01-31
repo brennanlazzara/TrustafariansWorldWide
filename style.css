@@ -32,11 +32,12 @@ img {
 }
 
 button {
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: white;
-    padding: 5px;
     margin-bottom: 5px;
     margin-top: 5px;
+    padding: 10px;
+    font-size: medium;
 }
 
 input {
@@ -74,13 +75,16 @@ input {
     font-size: larger;
 }
 
-#results-display {
-    height: 200px;
-    background-color: yellow;
-}
-
 h3 {
     font-size: 24px;
     font-weight: bold;
     color: #000;
+}
+
+#resultsDisplay {
+    max-width: 700px;
+    margin-left: 25%;
+    background-color: #d3d3d3;
+    border-radius: 25px;
+    text-align: center;
 }
