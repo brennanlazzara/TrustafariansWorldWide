@@ -42,7 +42,7 @@ $(document).ready(function () {
             for (let i = 0; i < response.Quotes.length; i++) {
                 $("#resultsTable").append(
                     $("<tr></tr>").append(
-                        $("<td></td>").append(response.Quotes[i].OutboundLeg.DepartureDate),
+                        $("<td></td>").append(moment(response.Quotes[i].OutboundLeg.DepartureDate).format("MMMM Do YYYY, h:mm:ss a")),
                         $("<td></td>").append(response.Quotes[i].MinPrice),
                         $("<td></td>").append(response.Quotes[i].Direct),
                         $("<td></td>").append(response.Quotes[i].OutboundLeg.CarrierIds)
