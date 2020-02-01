@@ -4,7 +4,29 @@ $(document).ready(function () {
     let arriveDest = $('#aDest');
     let departDate = $('#dDate');
     let arriveDate = $('#aDate');
-
+    let airports =
+    [
+        {
+            city: “Austin-Bergstrom (AUS)“,
+            scanner_code: “AUS”
+        },
+        {
+            city: “Dallas (JFK)“,
+            scanner_code: “JFK”
+        }
+    ];
+//     var airports = [];
+// {
+//     city: “”
+//     scanner_code: “”
+// }
+//     for (var count = 0; count < response.Places.length; count++) {
+//         airportArray.push({
+//             city: response.Places.city,
+//             scanner_code: response.Places.code
+//         });
+//     }
+    
     $("#search").on("click", function () {
 
         $('#calendar').hide();
@@ -13,6 +35,18 @@ $(document).ready(function () {
         let arriveDest = $('#aDest').val();
         let departDate = $('#dDate').val();
         let arriveDate = $('#aDate').val();
+   
+//     var airports = [];
+// {
+//     city: “”
+//     scanner_code: “”
+// }
+//     for (var count = 0; count < response.Places.length; count++) {
+//         airportArray.push({
+//             city: response.Places.city,
+//             scanner_code: response.Places.code
+//         });
+//     }
 
         // Flight Skyscanner API
         var flights = {
@@ -79,6 +113,20 @@ $(document).ready(function () {
 
     });
 
+
+$(“#dDest, #aDest”).autocomplete({
+    source: function (request, response) {
+        response($.map(airports, function (value, key) {
+            request.term = request.term.toLowerCase();
+            if (value.city.toLowerCase().includes(request.term) || value.scanner_code.toLowerCase().includes(request.term)) {
+                return {
+                    label: value.city,
+                    value: value.scanner_code
+                }
+            }
+        }));
+    }
+});
     
 });
 
