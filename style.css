@@ -88,3 +88,15 @@ h3 {
     border-radius: 25px;
     text-align: center;
 }
+
+#resultsTable {
+    width: 100%;
+    background-color: #d3d3d3;
+    border-radius: 25px;
+    text-align: center;
+}
+
+th {
+    background-color: yellow;
+    font-size: 24px;
+}

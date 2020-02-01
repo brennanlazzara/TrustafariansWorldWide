@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project 1</title>
-    <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css”> 
-    <link href="bulma.min.css" rel="stylesheet">
+    <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css”> <link
+        href="bulma.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
@@ -22,30 +22,32 @@
     <!-- Departure Destination Search By -->
 
     <!-- Arrival Destination Search By -->
-<div id="inputForm">
-    <div id="calendar">
-        <h3>Departure Destination</h3>
-        <input type="text" id="dDest" placeholder="Search by City" required>
-        <h3>Arrival Destination</h3>
-        <input id="aDest" placeholder="Search by City" required>
-        <h3 id="">Departure</h3>
-        <input id="dDate" type="date" required>
-        <h3>Arrival</h3>
-        <input id="aDate" type="date" required>
-        <br>
-        <button id="search" type="submit">Search</button>
-    </div>
-</div>
-    
-
-    <div container id="resultsDisplay">
-
-
+    <div id="inputForm">
+        <div id="calendar">
+            <h3>Departure Destination</h3>
+            <input type="text" id="dDest" placeholder="Search by City" required>
+            <h3>Arrival Destination</h3>
+            <input id="aDest" placeholder="Search by City" required>
+            <h3 id="">Departure</h3>
+            <input id="dDate" type="date" required>
+            <h3>Arrival</h3>
+            <input id="aDate" type="date" required>
+            <br>
+            <button id="search" type="submit">Search</button>
+        </div>
     </div>
 
 
+    <div class="container" id="resultsDisplay">
+        <table id="resultsTable">
 
-<script src="calendar.js"></script>
+        </table>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="calendar.js"></script>
     <script src="script.js"></script>
 
 </body>
