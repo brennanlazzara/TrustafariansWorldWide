@@ -53,20 +53,25 @@ $(document).ready(function () {
                 }
 
                 $("#resultsTable").append(
-                    $("<tr id=flightResults></tr>").append(
-                        $("<td class=departDate></td>").append(moment(response.Quotes[i].OutboundLeg.DepartureDate).format("MMMM Do YYYY, h:mm:ss a")),
-                        $("<td class=minPrice></td>").append(response.Quotes[i].MinPrice),
-                        $("<td class=direct></td>").append(response.Quotes[i].Direct),
-                        $("<td class=carrierName></td>").append(carrierName),
-                        $("<td class=departName></td>").append(response.Places[0].Name),
-                        $("<td class=arriveName></td>").append(response.Places[1].Name),
-                        $(`<td></td>`).html('<button class=resultSearch>Search</button>')
+                    $(`<tr></tr>`).append(
+                        $(`<td class=departDate${i}></td>`).append(moment(response.Quotes[i].OutboundLeg.DepartureDate).format("MMMM Do YYYY, h:mm:ss a")),
+                        $(`<td class=minPrice${i}></td>`).append(response.Quotes[i].MinPrice),
+                        $(`<td class=direct${i}></td>`).append(response.Quotes[i].Direct),
+                        $(`<td class=carrierName${i}></td>`).append(carrierName),
+                        $(`<td class=departName${i}></td>`).append(response.Places[0].Name),
+                        $(`<td class=arriveName${i}></td>`).append(response.Places[1].Name),
+                        $(`<td></td>`).html(`<button class=resultSearch id=${i}>Search</button>`)
                     )
                 );
             }
             
-            $(".resultSearch").on("click", function (){
-                alert('Hello');
+            $(".resultSearch").on("click", function (e){
+                console.log($(`.departDate${this.id}`).text());
+                console.log($(`.minPrice${this.id}`).text());
+                console.log($(`.direct${this.id}`).text());
+                console.log($(`.carrierName${this.id}`).text());
+                console.log($(`.departName${this.id}`).text());
+                console.log($(`.arriveName${this.id}`).text());
             });
 
         });
