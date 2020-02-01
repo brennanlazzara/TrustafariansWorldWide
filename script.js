@@ -53,27 +53,28 @@ $(document).ready(function () {
                 }
 
                 $("#resultsTable").append(
-                    $("<tr></tr>").append(
-                        $("<td></td>").append(moment(response.Quotes[i].OutboundLeg.DepartureDate).format("MMMM Do YYYY, h:mm:ss a")),
-                        $("<td></td>").append(response.Quotes[i].MinPrice),
-                        $("<td></td>").append(response.Quotes[i].Direct),
-                        $("<td></td>").append(carrierName),
-                        $("<td></td>").append(response.Places[0].Name),
-                        $("<td></td>").append(response.Places[1].Name),
-                        $(`<td></td>`).html('<button>Search</button>')
+                    $("<tr id=flightResults></tr>").append(
+                        $("<td class=departDate></td>").append(moment(response.Quotes[i].OutboundLeg.DepartureDate).format("MMMM Do YYYY, h:mm:ss a")),
+                        $("<td class=minPrice></td>").append(response.Quotes[i].MinPrice),
+                        $("<td class=direct></td>").append(response.Quotes[i].Direct),
+                        $("<td class=carrierName></td>").append(carrierName),
+                        $("<td class=departName></td>").append(response.Places[0].Name),
+                        $("<td class=arriveName></td>").append(response.Places[1].Name),
+                        $(`<td></td>`).html('<button class=resultSearch>Search</button>')
                     )
                 );
             }
+            
+            $(".resultSearch").on("click", function (){
+                alert('Hello');
+            });
 
-            // console.log(response.Quotes);
-            // console.log(response.Places);
-            // console.log(response.Carriers);
         });
 
 
     });
 
-
+    
 });
 
 
