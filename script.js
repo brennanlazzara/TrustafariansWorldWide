@@ -26,26 +26,41 @@ $(document).ready(function () {
             }
         }
         $.ajax(flights).done(function (response) {
-            var DIV = $('<div>');
-            DIV.append(`<h3>MinPrice: ${JSON.stringify(response.Quotes[0].MinPrice)}</h3><h3>Direct: ${JSON.stringify(response.Quotes[0].Direct)}</h3><h3>CarrierIds: ${response.Quotes[0].OutboundLeg.CarrierIds}</h3><h3>Places ${JSON.stringify(response.Places[0].Name)}</h3><h3>Carriers ${JSON.stringify(response.Carriers[0].Name)}</h3>`);
-            $('#resultsDisplay').append(DIV);
 
             $("#resultsTable").append(
                 $("<tr></tr>").append(
                     $("<th></th>").text('Departure Date '),
                     $("<th></th>").text('MinPrice '),
                     $("<th></th>").text('Direct '),
-                    $("<th></th>").text('Carrier Ids ')
+                    $("<th></th>").text('Airline '),
+                    $("<th></th>").text('Departure '),
+                    $("<th></th>").text('Destination '),
+                    $("<th></th>").text("")
                 )
             );
 
+            
+
             for (let i = 0; i < response.Quotes.length; i++) {
+                let carrierId = response.Quotes[i].OutboundLeg.CarrierIds[0];
+                let carrierName = '';
+
+                let j = response.Carriers;
+                for (x of j) {
+                    if (x.CarrierId === carrierId ) {
+                        carrierName = x.Name;
+                    }
+                }
+
                 $("#resultsTable").append(
                     $("<tr></tr>").append(
                         $("<td></td>").append(moment(response.Quotes[i].OutboundLeg.DepartureDate).format("MMMM Do YYYY, h:mm:ss a")),
                         $("<td></td>").append(response.Quotes[i].MinPrice),
                         $("<td></td>").append(response.Quotes[i].Direct),
-                        $("<td></td>").append(response.Quotes[i].OutboundLeg.CarrierIds)
+                        $("<td></td>").append(carrierName),
+                        $("<td></td>").append(response.Places[0].Name),
+                        $("<td></td>").append(response.Places[1].Name),
+                        $(`<td></td>`).html('<button>Search</button>')
                     )
                 );
             }

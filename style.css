@@ -82,8 +82,7 @@ h3 {
 }
 
 #resultsDisplay {
-    max-width: 700px;
-    margin-left: 25%;
+    max-width: 100%;
     background-color: #d3d3d3;
     border-radius: 25px;
     text-align: center;
@@ -91,7 +90,6 @@ h3 {
 
 #resultsTable {
     width: 100%;
-    background-color: #d3d3d3;
     border-radius: 25px;
     text-align: center;
 }
