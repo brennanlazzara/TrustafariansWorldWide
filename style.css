@@ -81,12 +81,32 @@ h3 {
     color: #000;
 }
 
+/* DROP DOWN MENU */
+.ui-menu {
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 25px;
+    border: 1px solid #454545;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+  .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+     background: #6693BC !important;
+     font-weight: bold !important;
+     color: #FFFFFF !important;
+     padding-left: 40px;
+     border-radius: 25px;
+     font-size: 20px;
+ }
+
+/* Results Page */
 #resultsDisplay {
     max-width: 100%;
     background-color: #d3d3d3;
     border-radius: 25px;
     text-align: center;
 }
+
 
 #resultsTable {
     width: 100%;
@@ -98,3 +118,4 @@ th {
     background-color: yellow;
     font-size: 24px;
 }
+
