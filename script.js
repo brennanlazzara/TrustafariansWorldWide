@@ -4,29 +4,47 @@ $(document).ready(function () {
     let arriveDest = $('#aDest');
     let departDate = $('#dDate');
     let arriveDate = $('#aDate');
-    let airports =
-    [
-        {
-            city: “Austin-Bergstrom (AUS)“,
-            scanner_code: “AUS”
+    let airports = [{
+            city: 'Austin-Bergstrom (AUS)',
+            scanner_code: 'AUS'
         },
         {
-            city: “Dallas (JFK)“,
-            scanner_code: “JFK”
-        }
+            city: 'Dallas (JFK)',
+            scanner_code: 'JFK'
+        },
+        {
+            city: 'Los Angeles (LAX)',
+            scanner_code: 'LAX'
+        },
+        {
+            city: 'Atlanta (ATL)',
+            scanner_code: 'ATL'
+        },
+        {
+            city: 'Chicago (ORD)',
+            scanner_code: 'ORD'
+        },
+        {
+            city: 'Dallas (DFW)',
+            scanner_code: 'DFW'
+        },
+        {
+            city: 'Denver (DEN)',
+            scanner_code: 'DEN'
+        },
+        {
+            city: 'San Francisco (SFO)',
+            scanner_code: 'JFK'
+        },
+        {
+            city: 'Las Vegas (LAS)',
+            scanner_code: 'AUS'
+        },
+        {
+            city: 'Seattle (SEA)',
+            scanner_code: 'AUS'
+        },
     ];
-//     var airports = [];
-// {
-//     city: “”
-//     scanner_code: “”
-// }
-//     for (var count = 0; count < response.Places.length; count++) {
-//         airportArray.push({
-//             city: response.Places.city,
-//             scanner_code: response.Places.code
-//         });
-//     }
-    
     $("#search").on("click", function () {
 
         $('#calendar').hide();
@@ -35,18 +53,7 @@ $(document).ready(function () {
         let arriveDest = $('#aDest').val();
         let departDate = $('#dDate').val();
         let arriveDate = $('#aDate').val();
-   
-//     var airports = [];
-// {
-//     city: “”
-//     scanner_code: “”
-// }
-//     for (var count = 0; count < response.Places.length; count++) {
-//         airportArray.push({
-//             city: response.Places.city,
-//             scanner_code: response.Places.code
-//         });
-//     }
+
 
         // Flight Skyscanner API
         var flights = {
@@ -73,7 +80,7 @@ $(document).ready(function () {
                 )
             );
 
-            
+
 
             for (let i = 0; i < response.Quotes.length; i++) {
                 let carrierId = response.Quotes[i].OutboundLeg.CarrierIds[0];
@@ -81,7 +88,7 @@ $(document).ready(function () {
 
                 let j = response.Carriers;
                 for (x of j) {
-                    if (x.CarrierId === carrierId ) {
+                    if (x.CarrierId === carrierId) {
                         carrierName = x.Name;
                     }
                 }
@@ -98,8 +105,8 @@ $(document).ready(function () {
                     )
                 );
             }
-            
-            $(".resultSearch").on("click", function (e){
+
+            $(".resultSearch").on("click", function (e) {
                 console.log($(`.departDate${this.id}`).text());
                 console.log($(`.minPrice${this.id}`).text());
                 console.log($(`.direct${this.id}`).text());
@@ -114,20 +121,17 @@ $(document).ready(function () {
     });
 
 
-$(“#dDest, #aDest”).autocomplete({
-    source: function (request, response) {
-        response($.map(airports, function (value, key) {
-            request.term = request.term.toLowerCase();
-            if (value.city.toLowerCase().includes(request.term) || value.scanner_code.toLowerCase().includes(request.term)) {
-                return {
-                    label: value.city,
-                    value: value.scanner_code
+    $('#dDest, #aDest').autocomplete({
+        source: function (request, response) {
+            response($.map(airports, function (value, key) {
+                request.term = request.term.toLowerCase();
+                if (value.city.toLowerCase().includes(request.term) || value.scanner_code.toLowerCase().includes(request.term)) {
+                    return {
+                        label: value.city,
+                        value: value.scanner_code
+                    }
                 }
-            }
-        }));
-    }
+            }));
+        }
+    });
 });
-    
-});
-
-
