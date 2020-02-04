@@ -1,7 +1,37 @@
-body {
-    background-image: url("assets/images/cheesy-tropic.jpg");
-    height: 1000px;
+/* BACKGROUND VIDEO */
+#myVideo {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
 
+/* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
 }
 
 header {
@@ -90,14 +120,15 @@ h3 {
     padding-top: 5px;
     padding-bottom: 5px;
 }
-  .ui-menu-item .ui-menu-item-wrapper.ui-state-active {
-     background: #6693BC !important;
-     font-weight: bold !important;
-     color: #FFFFFF !important;
-     padding-left: 40px;
-     border-radius: 25px;
-     font-size: 20px;
- }
+
+.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+    background: #6693BC !important;
+    font-weight: bold !important;
+    color: #FFFFFF !important;
+    padding-left: 40px;
+    border-radius: 25px;
+    font-size: 20px;
+}
 
 /* Results Page */
 #resultsDisplay {
@@ -118,4 +149,3 @@ th {
     background-color: yellow;
     font-size: 24px;
 }
-
