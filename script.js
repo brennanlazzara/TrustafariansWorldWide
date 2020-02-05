@@ -107,6 +107,8 @@ $(document).ready(function () {
             }
 
             $(".resultSearch").on("click", function (e) {
+                $('#resultsDisplay').hide();
+
                 const API_KEY = 'ef520636f39c506ecb6d5946a35d006b';
                 const units = '&units=imperial';
                 const currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
@@ -131,6 +133,17 @@ $(document).ready(function () {
 
                 });
                
+                $('#yourFlightResult').append(
+                    $('<ul>Your Flight Summary:</ul>').append(
+                        $('<li></li>').append($(`.departDate${this.id}`).text()),
+                        $('<li></li>').append('$' + $(`.minPrice${this.id}`).text()),
+                        $('<li></li>').append($(`.direct${this.id}`).text()),
+                        $('<li></li>').append($(`.carrierName${this.id}`).text()),
+                        $('<li></li>').append($(`.departName${this.id}`).text()),
+                        $('<li></li>').append($(`.arriveName${this.id}`).text())
+                        
+                    )
+                );
                
                 console.log($(`.departDate${this.id}`).text());
                 console.log($(`.minPrice${this.id}`).text());

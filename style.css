@@ -148,3 +148,27 @@ th {
     background-color: yellow;
     font-size: 24px;
 }
+
+#yourFlightResult {
+    max-width: 100%;
+    background-color: #d3d3d3;
+    border-radius: 25px;
+    text-align: center;
+    float: left;
+
+}
+
+#yourFlightResult ul {
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+
+#yourCurrentWeather {
+    max-width: 100%;
+    background-color: #d3d3d3;
+    border-radius: 25px;
+    text-align: center;
+  
+}
+
