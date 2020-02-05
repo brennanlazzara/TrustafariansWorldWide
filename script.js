@@ -4,6 +4,9 @@ $(document).ready(function () {
     let arriveDest = $('#aDest');
     let departDate = $('#dDate');
     let arriveDate = $('#aDate');
+
+    let destCity;
+
     let airports = [{
             city: 'Austin-Bergstrom (AUS)',
             scanner_code: 'AUS'
@@ -68,6 +71,8 @@ $(document).ready(function () {
         }
         $.ajax(flights).done(function (response) {
 
+            destCity = response.Places[1].CityName;
+
             $("#resultsTable").append(
                 $("<tr></tr>").append(
                     $("<th></th>").text('Departure Date '),
@@ -112,8 +117,12 @@ $(document).ready(function () {
                 const API_KEY = 'ef520636f39c506ecb6d5946a35d006b';
                 const units = '&units=imperial';
                 const currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-                let queryURL = `${currentWeatherURL}denver&appid=${API_KEY}${units}`
+                let queryURL = `${currentWeatherURL}${destCity}&appid=${API_KEY}${units}`
                 
+
+                console.log(queryURL);
+
+
                     $('#yourFlightResult').append(
                     $('<ul>Your Flight Summary:</ul>').append(
                         $('<li></li>').append($(`.departDate${this.id}`).text()),
@@ -129,22 +138,23 @@ $(document).ready(function () {
                     url: queryURL,
                     method: 'GET'
                 }).then(response => {
-                    response.main.temp; /* current temp */
-                    response.main.feels_like; /* feels like */
-                    response.main.pressure; /* pressure */
-                    response.main.humidity; /* humidity */
-                    response.wind.speed; /* wind speed */
-                    response.wind.gust; /* wind gust */
 
+                    
+                    let windGust = response.wind.gust;
+
+
+                    if (!windGust) {
+                        windGust = 0;
+                    }
 
                     $('#yourCurrentWeather').append(
                         $('<ul>Your Current Weather at Destination:</ul>').append(
                             $('<li></li>').append('Current Temperature: ' + response.main.temp + '°F'),
-                            $('<li></li>').append('Feels Like: ' + response.main.feels_like),
+                            $('<li></li>').append('Feels Like: ' + response.main.feels_like + '°F'),
                             $('<li></li>').append('Pressure: ' + response.main.pressure),
                             $('<li></li>').append('Humidity: ' + response.main.humidity),
                             $('<li></li>').append('Wind Speed: ' + response.wind.speed),
-                            $('<li></li>').append('Wind Gust: ' + response.wind.gust)
+                            $('<li></li>').append('Wind Gust: ' + windGust)
     
     
                         )
