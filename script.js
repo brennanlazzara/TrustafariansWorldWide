@@ -119,33 +119,41 @@ $(document).ready(function () {
                 const currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
                 let queryURL = `${currentWeatherURL}${destCity}&appid=${API_KEY}${units}`
                 
+                $('#yourFlightResult').empty();
 
-                    $('#yourFlightResult').show()
-                    $('#yourFlightResult').append(
+                let direct = $(`.direct${this.id}`).text();
+
+                    if (!direct) {
+                        direct = 'False';
+                    }
+
+                $('#yourFlightResult').show();
+                $('#yourFlightResult').append(
                     $('<ul>Your Flight Summary:</ul>').append(
-                        $('<li></li>').append($(`.departDate${this.id}`).text()),
-                        $('<li></li>').append('$' + $(`.minPrice${this.id}`).text()),
-                        $('<li></li>').append($(`.direct${this.id}`).text()),
-                        $('<li></li>').append($(`.carrierName${this.id}`).text()),
-                        $('<li></li>').append($(`.departName${this.id}`).text()),
-                        $('<li></li>').append($(`.arriveName${this.id}`).text())
-
+                        $('<li></li>').append('Date: ' + $(`.departDate${this.id}`).text()),
+                        $('<li></li>').append('Price: $' + $(`.minPrice${this.id}`).text()),
+                        $('<li></li>').append('Direct: ' + direct),
+                        $('<li></li>').append('Airline: ' + $(`.carrierName${this.id}`).text()),
+                        $('<li></li>').append('Departure City: ' + $(`.departName${this.id}`).text()),
+                        $('<li></li>').append('Destination City: ' + $(`.arriveName${this.id}`).text())
                     )
                 );
+
+                // Get current weather from API
                 $.ajax({
                     url: queryURL,
                     method: 'GET'
                 }).then(response => {
 
-                    
                     let windGust = response.wind.gust;
-
 
                     if (!windGust) {
                         windGust = 0;
                     }
 
-                    $('#yourCurrentWeather').show()
+                    $('#yourCurrentWeather').empty();
+
+                    $('#yourCurrentWeather').show();
                     $('#yourCurrentWeather').append(
                         $('<ul>Your Current Weather at Destination:</ul>').append(
                             $('<li></li>').append('City: ' + response.name),
@@ -155,14 +163,9 @@ $(document).ready(function () {
                             $('<li></li>').append('Humidity: ' + response.main.humidity),
                             $('<li></li>').append('Wind Speed: ' + response.wind.speed),
                             $('<li></li>').append('Wind Gust: ' + windGust)
-    
-    
                         )
                     );
-
                 });
-
-
 
             });
 
