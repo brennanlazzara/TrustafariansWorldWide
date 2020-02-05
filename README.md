@@ -4,7 +4,7 @@ This repo is composed of 4 pages
 Index.html / style.css / script.js / calendar.js 
 Create a simple flight/weather application that allows the user to save events for each flight and corresponding weather of the chosen day. This app will run in the browser and feature dynamically updated HTML and CSS (bulma framework) powered by jQuery with API's driven by "Skyscanner and openweather.
 
-![Screenshot](/assets/images/workDaySchedulerScreenShot.png)
+![Screenshot](assets/images/screenshot_project1.png)
 
 ## Github pages:
 

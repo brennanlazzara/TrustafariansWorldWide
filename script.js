@@ -107,6 +107,31 @@ $(document).ready(function () {
             }
 
             $(".resultSearch").on("click", function (e) {
+                const API_KEY = 'ef520636f39c506ecb6d5946a35d006b';
+                const units = '&units=imperial';
+                const currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
+                queryURL = `${currentWeatherURL}denver&appid=${API_KEY}${units}`
+                $.ajax({
+                  url: queryURL,
+                  method: 'GET'
+                }).then(response => {
+                  response.main.temp; /* current temp */
+                  response.main.feels_like; /* feels like */
+                  response.main.pressure; /* pressure */
+                  response.main.humidity; /* humidity */
+                  response.wind.speed; /* wind speed */
+                  response.wind.gust; /* wind gust */
+                  console.log(response.main.temp);
+                  console.log(response.main.feels_like);
+                  console.log(response.main.pressure);
+                  console.log(response.main.humidity);
+                  console.log(response.wind.speed);
+                  console.log(response.wind.gust);
+
+
+                });
+               
+               
                 console.log($(`.departDate${this.id}`).text());
                 console.log($(`.minPrice${this.id}`).text());
                 console.log($(`.direct${this.id}`).text());
