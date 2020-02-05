@@ -155,14 +155,24 @@ th {
     border-radius: 25px;
     text-align: center;
     float: left;
-
+    padding: 50px;
 }
 
 #yourFlightResult ul {
     font-weight: bold;
     font-size: 30px;
     
+    
 }
+
+#yourFlightResult li {
+    font-weight: bold;
+    font-size: 20px;
+    
+    
+}
+
+
 
 #yourCurrentWeather {
     max-width: 100%;
@@ -170,6 +180,7 @@ th {
     border-radius: 25px;
     text-align: center;
     float: right;
+    padding: 50px;
   
 }
 
@@ -178,4 +189,12 @@ th {
     font-size: 30px;
     
 }
+
+
+#yourCurrentWeather li {
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
 

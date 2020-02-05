@@ -51,7 +51,7 @@ $(document).ready(function () {
     $("#search").on("click", function () {
 
         $('#calendar').hide();
-
+        $(".ui-helper-hidden-accessible").hide()
         let departDest = $('#dDest').val();
         let arriveDest = $('#aDest').val();
         let departDate = $('#dDate').val();
@@ -120,9 +120,7 @@ $(document).ready(function () {
                 let queryURL = `${currentWeatherURL}${destCity}&appid=${API_KEY}${units}`
                 
 
-                console.log(queryURL);
-
-
+                    $('#yourFlightResult').show()
                     $('#yourFlightResult').append(
                     $('<ul>Your Flight Summary:</ul>').append(
                         $('<li></li>').append($(`.departDate${this.id}`).text()),
@@ -147,11 +145,13 @@ $(document).ready(function () {
                         windGust = 0;
                     }
 
+                    $('#yourCurrentWeather').show()
                     $('#yourCurrentWeather').append(
                         $('<ul>Your Current Weather at Destination:</ul>').append(
+                            $('<li></li>').append('City: ' + response.name),
                             $('<li></li>').append('Current Temperature: ' + response.main.temp + '°F'),
                             $('<li></li>').append('Feels Like: ' + response.main.feels_like + '°F'),
-                            $('<li></li>').append('Pressure: ' + response.main.pressure),
+                            $('<li></li>').append('Pressure: ' + response.main.pressure + 'Pa'),
                             $('<li></li>').append('Humidity: ' + response.main.humidity),
                             $('<li></li>').append('Wind Speed: ' + response.wind.speed),
                             $('<li></li>').append('Wind Gust: ' + windGust)
