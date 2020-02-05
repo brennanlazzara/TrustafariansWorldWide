@@ -112,28 +112,9 @@ $(document).ready(function () {
                 const API_KEY = 'ef520636f39c506ecb6d5946a35d006b';
                 const units = '&units=imperial';
                 const currentWeatherURL = 'https://api.openweathermap.org/data/2.5/weather?q=';
-                queryURL = `${currentWeatherURL}denver&appid=${API_KEY}${units}`
-                $.ajax({
-                  url: queryURL,
-                  method: 'GET'
-                }).then(response => {
-                  response.main.temp; /* current temp */
-                  response.main.feels_like; /* feels like */
-                  response.main.pressure; /* pressure */
-                  response.main.humidity; /* humidity */
-                  response.wind.speed; /* wind speed */
-                  response.wind.gust; /* wind gust */
-                  console.log(response.main.temp);
-                  console.log(response.main.feels_like);
-                  console.log(response.main.pressure);
-                  console.log(response.main.humidity);
-                  console.log(response.wind.speed);
-                  console.log(response.wind.gust);
-
-
-                });
-               
-                $('#yourFlightResult').append(
+                let queryURL = `${currentWeatherURL}denver&appid=${API_KEY}${units}`
+                
+                    $('#yourFlightResult').append(
                     $('<ul>Your Flight Summary:</ul>').append(
                         $('<li></li>').append($(`.departDate${this.id}`).text()),
                         $('<li></li>').append('$' + $(`.minPrice${this.id}`).text()),
@@ -141,16 +122,38 @@ $(document).ready(function () {
                         $('<li></li>').append($(`.carrierName${this.id}`).text()),
                         $('<li></li>').append($(`.departName${this.id}`).text()),
                         $('<li></li>').append($(`.arriveName${this.id}`).text())
-                        
+
                     )
                 );
-               
-                console.log($(`.departDate${this.id}`).text());
-                console.log($(`.minPrice${this.id}`).text());
-                console.log($(`.direct${this.id}`).text());
-                console.log($(`.carrierName${this.id}`).text());
-                console.log($(`.departName${this.id}`).text());
-                console.log($(`.arriveName${this.id}`).text());
+                $.ajax({
+                    url: queryURL,
+                    method: 'GET'
+                }).then(response => {
+                    response.main.temp; /* current temp */
+                    response.main.feels_like; /* feels like */
+                    response.main.pressure; /* pressure */
+                    response.main.humidity; /* humidity */
+                    response.wind.speed; /* wind speed */
+                    response.wind.gust; /* wind gust */
+
+
+                    $('#yourCurrentWeather').append(
+                        $('<ul>Your Current Weather at Destination:</ul>').append(
+                            $('<li></li>').append('Current Temperature: ' + response.main.temp + '°F'),
+                            $('<li></li>').append('Feels Like: ' + response.main.feels_like),
+                            $('<li></li>').append('Pressure: ' + response.main.pressure),
+                            $('<li></li>').append('Humidity: ' + response.main.humidity),
+                            $('<li></li>').append('Wind Speed: ' + response.wind.speed),
+                            $('<li></li>').append('Wind Gust: ' + response.wind.gust)
+    
+    
+                        )
+                    );
+
+                });
+
+
+
             });
 
         });

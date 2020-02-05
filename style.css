@@ -169,6 +169,13 @@ th {
     background-color: #d3d3d3;
     border-radius: 25px;
     text-align: center;
+    float: right;
   
+}
+
+#yourCurrentWeather ul {
+    font-weight: bold;
+    font-size: 30px;
+    
 }
 
